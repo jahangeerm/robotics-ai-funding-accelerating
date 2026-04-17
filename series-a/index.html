@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Series A · internal brief | Auki</title>
+<meta name="description" content="Internal brief — why Auki should start Series A fundraising now. Peer benchmarks, capital pressure, category validation, window risk." />
+
+<!--
+  Brand (per Auki Labs brand guide):
+    Off-black #111111 · Off-white #DBEDED
+    Orange #FD9E2F (sparingly) · Light green #CFFFB0 (secondary accent)
+  Type: DM Sans (body) + Space Grotesk (headers fallback for TT Firs Neue)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #111111;
+    --panel: #181818;
+    --panel-2: #1f1f1f;
+    --stroke: #2a2a2a;
+    --stroke-2: #3a3a3a;
+    --text: #DBEDED;
+    --text-2: #a9b8b8;
+    --text-3: #6f7a7a;
+    --accent: #FD9E2F;
+    --accent-soft: #CFFFB0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  body {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  .display, h1, h2, h3, .eyebrow, .stat .v {
+    font-family: "Space Grotesk", "TT Firs Neue", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  .topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--stroke-2);
+    padding-top: 18px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    min-height: 56px;
+    gap: 12px;
+  }
+  .topline .logo { display: inline-flex; align-items: center; }
+  .topline .logo svg { height: 48px; width: auto; display: block; }
+  .topline .meta { text-align: right; line-height: 1.4; }
+  .topline .meta .confidential {
+    display: inline-block;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 8px;
+    margin-right: 8px;
+    letter-spacing: 0.2em;
+    font-size: 10px;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 500;
+  }
+
+  .eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 16px;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    color: var(--text);
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 10px;
+    letter-spacing: -0.005em;
+    font-weight: 500;
+    color: var(--text);
+  }
+  h3 {
+    font-size: 12px;
+    margin: 0 0 14px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  p { margin: 0 0 12px; color: var(--text-2); font-size: 15px; }
+  .lede { font-size: 18px; color: var(--text-2); max-width: 72ch; line-height: 1.55; }
+  strong { color: var(--text); font-weight: 700; }
+  em.hl { font-style: normal; color: var(--accent-soft); }
+
+  .grid { display: grid; gap: 18px; }
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  @media (max-width: 720px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+  .section {
+    margin: 56px 0 0;
+    padding-top: 28px;
+    border-top: 1px solid var(--stroke-2);
+  }
+  .section:first-of-type { border-top: 0; padding-top: 0; margin-top: 36px; }
+  .section-label {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    color: var(--text-3);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    margin: 0 0 18px;
+    color: var(--text);
+  }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: 4px;
+    padding: 24px;
+  }
+
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--stroke);
+    border-radius: 4px;
+    padding: 20px 20px 18px;
+  }
+  .stat .v {
+    font-size: clamp(30px, 3.6vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.05;
+  }
+  .stat .v .u { font-size: 0.55em; color: var(--text-2); font-weight: 400; margin-left: 2px; }
+  .stat .l { margin-top: 10px; font-size: 13px; color: var(--text-2); }
+  .stat .delta {
+    margin-top: 8px; font-size: 12px; color: var(--accent);
+    font-weight: 500; letter-spacing: 0.05em;
+  }
+  .stat.hero {
+    background: transparent;
+    border: 1px solid var(--accent);
+  }
+  .stat.hero .v { color: var(--accent); font-size: clamp(44px, 6vw, 72px); }
+  .stat.soft .delta { color: var(--accent-soft); }
+
+  .pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 2px;
+    background: transparent;
+    border: 1px solid var(--stroke-2);
+    font-size: 11px;
+    color: var(--text-2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+    margin-top: 6px;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--stroke); }
+  th { color: var(--text-2); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; }
+  td { color: var(--text-2); }
+  td.co { color: var(--text); font-weight: 500; }
+  td.num { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+
+  .callout {
+    border: 1px solid var(--stroke-2);
+    border-left: 3px solid var(--accent);
+    padding: 20px 22px;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    background: var(--panel);
+  }
+  .callout.soft { border-left-color: var(--accent-soft); }
+  .callout .label {
+    display: block;
+    color: var(--accent);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .callout.soft .label { color: var(--accent-soft); }
+
+  .chart-note { font-size: 12px; color: var(--text-3); margin-top: 10px; letter-spacing: 0.02em; }
+
+  /* Editable placeholder fields for the "Auki case" section */
+  .fill {
+    display: block;
+    color: var(--text-3);
+    font-style: italic;
+    border-bottom: 1px dashed var(--stroke-2);
+    padding-bottom: 2px;
+  }
+
+  /* Timeline for valuation jumps */
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    margin-top: 16px;
+    border-top: 1px solid var(--stroke-2);
+    border-bottom: 1px solid var(--stroke-2);
+    padding: 18px 0;
+  }
+  .timeline .t-step { padding: 0 14px; border-left: 1px solid var(--stroke); }
+  .timeline .t-step:first-child { border-left: 0; padding-left: 0; }
+  .timeline .t-step .d { font-family: "Space Grotesk", system-ui, sans-serif; color: var(--text-3); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .timeline .t-step .v { font-family: "Space Grotesk", system-ui, sans-serif; font-size: 24px; color: var(--text); font-weight: 500; margin-top: 4px; }
+  .timeline .t-step.accent .v { color: var(--accent); }
+
+  .footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 1px solid var(--stroke-2);
+    color: var(--text-3);
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+  .footer a { color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; }
+  .footer .pagination {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 10px;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 12px;
+    color: var(--text-2);
+    letter-spacing: 0.12em;
+  }
+  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(253,158,47,0.35); }
+  a.inline:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+
+  /* Checklist for "Auki case" */
+  .checklist { list-style: none; padding: 0; margin: 0; }
+  .checklist li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--stroke);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    color: var(--text-2);
+    font-size: 15px;
+  }
+  .checklist li:last-child { border-bottom: 0; }
+  .checklist li .k {
+    color: var(--text);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="topline">
+    <span class="logo" aria-label="Auki">
+      <svg width="97" height="152" viewBox="0 0 97 152" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Auki">
+        <path d="M70.1265 28.5034L55.4703 40.4841L70.1265 52.4647V28.5034Z" fill="#F5F5F5"/>
+        <path d="M5.88977 0V103.375H91.5352V0H5.88977ZM78.6859 92.676H70.1264V63.5268L48.7176 46.0151L27.3087 63.5268V92.676H18.7391V10.4364L48.7176 34.9529L78.696 10.4364V92.676H78.6859Z" fill="#F5F5F5"/>
+        <path d="M27.2985 52.4647L41.9445 40.4841L27.2985 28.5034V52.4647Z" fill="#F5F5F5"/>
+        <path d="M4.2165 137.063L10.5659 117.78H15.7133L22.1411 137.063H18.0257L16.9544 133.392H9.377L8.26651 137.063H4.2165ZM10.2915 130.387H16.066L13.231 120.681L10.2915 130.387ZM38.8062 137.403C37.16 137.403 35.8057 137.242 34.7431 136.92C33.6892 136.598 32.8662 136.145 32.2739 135.561C31.6904 134.978 31.281 134.294 31.0458 133.51C30.8194 132.726 30.7062 131.872 30.7062 130.949V117.767H34.5863V131.119C34.5863 132.391 34.9521 133.249 35.6838 133.693C36.4241 134.137 37.4649 134.359 38.8062 134.359C40.1649 134.359 41.1665 134.133 41.811 133.68C42.4643 133.227 42.7909 132.373 42.7909 131.119V117.767H46.671V130.792C46.671 131.707 46.5622 132.565 46.3444 133.366C46.1267 134.168 45.7347 134.873 45.1686 135.483C44.6112 136.084 43.8186 136.554 42.7909 136.894C41.7631 137.233 40.4349 137.403 38.8062 137.403ZM60.6841 131.289V137.063H56.8039V117.78H60.6841V127.134L68.1831 117.78H72.4683L65.5702 126.39L72.9517 137.063H68.575L62.8136 128.624L60.6841 131.289ZM80.6545 134.163H84.1689V120.667H80.6545V117.78H91.5242V120.667H88.036V134.163H91.5242V137.063H80.6545V134.163Z" fill="#F5F5F5"/>
+      </svg>
+    </span>
+    <span class="meta">
+      <span class="confidential">Confidential · Internal</span>
+      <br/>
+      Series A brief · Apr 2026
+    </span>
+  </div>
+
+  <header style="margin-bottom: 32px;">
+    <div class="eyebrow">Series A · internal brief</div>
+    <h1>Why we should start<br/>our Series A now.</h1>
+    <p class="lede">
+      The capital is deployable, the category is validating, and peers are inflating valuations in
+      months, not quarters. Waiting isn't conservative — it's <em class="hl">structurally expensive</em>.
+      This brief sets out the market evidence and the specific Auki case Nils needs to greenlight.
+    </p>
+    <div>
+      <span class="pill">Internal</span>
+      <span class="pill">For Nils</span>
+      <span class="pill">Draft — Apr 17 2026</span>
+    </div>
+  </header>
+
+  <!-- SECTION A — Peer benchmarks -->
+  <section class="section">
+    <div class="section-label">A · Peer benchmarks</div>
+    <h2 class="section-title">What a Series A looks like right now.</h2>
+    <p>
+      Market is writing bigger checks at higher valuations for exactly our category — robotics,
+      embodied AI, and the infrastructure around it.
+    </p>
+
+    <div class="grid grid-4" style="margin-top: 18px;">
+      <div class="stat">
+        <div class="v">$25<span class="u">M+</span></div>
+        <div class="l">Median robotics Series A, 2024</div>
+        <div class="delta">+87% vs 2021 ($13.4M)</div>
+      </div>
+      <div class="stat">
+        <div class="v">$49<span class="u">M</span></div>
+        <div class="l">Median pre-money Series A (all AI), 2026</div>
+        <div class="delta">Up from ~$35M in 2023</div>
+      </div>
+      <div class="stat">
+        <div class="v">28<span class="u">%</span></div>
+        <div class="l">Share of all Series A activity, AI/ML</div>
+        <div class="delta">#1 sector</div>
+      </div>
+      <div class="stat">
+        <div class="v">$935<span class="u">M</span></div>
+        <div class="l">Apptronik Series A + extension</div>
+        <div class="delta">at $5B valuation (Feb 2026)</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 18px;">
+      <h3>Medians shifting fast</h3>
+      <svg viewBox="0 0 340 200" width="100%" height="200" role="img" aria-label="Median robotics Series A size 2021 to 2024">
+        <line x1="50" y1="170" x2="330" y2="170" stroke="var(--stroke-2)" />
+        <line x1="50" y1="40" x2="330" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <line x1="50" y1="105" x2="330" y2="105" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <text x="44" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$30M</text>
+        <text x="44" y="109" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$15M</text>
+        <text x="44" y="173" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$0</text>
+
+        <!-- 2021: $13.4M → height ~58/130 of 130px scale, use 130 as 30M scale → 13.4 * (130/30) = 58 -->
+        <rect x="100" y="112" width="60" height="58" fill="#2a2a2a" />
+        <rect x="100" y="112" width="60" height="3" fill="#DBEDED" />
+        <text x="130" y="106" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">$13.4M</text>
+        <text x="130" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2021</text>
+
+        <!-- 2024: $25M → 25 * (130/30) ≈ 108 -->
+        <rect x="220" y="62" width="60" height="108" fill="#FD9E2F" />
+        <text x="250" y="56" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">$25M+</text>
+        <text x="250" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2024</text>
+      </svg>
+      <p class="chart-note">
+        Median robotics Series A check nearly doubled in three years.
+        Source: <a class="inline" href="https://qubit.capital/blog/series-a-benchmarks-robotics-startups">Qubit Capital</a>.
+      </p>
+    </div>
+
+    <div class="callout" style="margin-top: 18px;">
+      <span class="label">Read</span>
+      Robotics Series A rounds that sized properly are now commanding <strong>$40–50M+ with growth-stage
+      investors in the syndicate</strong>. The ceiling for momentum cases (Apptronik, Mind Robotics $500M)
+      is materially higher than it was even 12 months ago. A well-positioned Auki round lands somewhere in
+      the fat middle of that distribution — not the outlier tail, not the floor.
+    </div>
+  </section>
+
+  <!-- SECTION B — Capital pressure -->
+  <section class="section">
+    <div class="section-label">B · Capital pressure</div>
+    <h2 class="section-title">The money wants to move.</h2>
+    <p>
+      LPs are pressuring funds to deploy. Corporate VCs are the most aggressive they've ever been in
+      physical AI. The supply side of capital is the strongest signal in the market right now.
+    </p>
+
+    <div class="grid grid-3" style="margin-top: 18px;">
+      <div class="stat hero">
+        <div class="v">$2.5<span class="u">T+</span></div>
+        <div class="l">Global VC / PE dry powder</div>
+        <div class="delta">&gt;50% aged 2–5 yrs → deployment pressure</div>
+      </div>
+      <div class="stat">
+        <div class="v">30×</div>
+        <div class="l">NVIDIA NVentures deal pace</div>
+        <div class="delta">1 deal (2022) → 30 deals (2025)</div>
+      </div>
+      <div class="stat soft">
+        <div class="v">+22.9<span class="u">%</span></div>
+        <div class="l">Global PE/VC deal value YoY (2025)</div>
+        <div class="delta">2nd-highest on record</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 18px;">
+      <h3>NVentures is the canary</h3>
+      <svg viewBox="0 0 340 200" width="100%" height="200" role="img" aria-label="NVIDIA NVentures deal count 2022 vs 2025">
+        <line x1="50" y1="170" x2="330" y2="170" stroke="var(--stroke-2)" />
+        <line x1="50" y1="40" x2="330" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <line x1="50" y1="105" x2="330" y2="105" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <text x="44" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">30</text>
+        <text x="44" y="109" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">15</text>
+        <text x="44" y="173" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">0</text>
+
+        <!-- 2022: 1 deal → tiny bar -->
+        <rect x="100" y="165" width="60" height="5" fill="#2a2a2a" />
+        <rect x="100" y="165" width="60" height="3" fill="#DBEDED" />
+        <text x="130" y="159" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">1 deal</text>
+        <text x="130" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2022</text>
+
+        <!-- 2025: 30 deals → full 130 -->
+        <rect x="220" y="40" width="60" height="130" fill="#FD9E2F" />
+        <text x="250" y="34" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">30 deals</text>
+        <text x="250" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2025</text>
+      </svg>
+      <p class="chart-note">
+        NVIDIA portfolio in our adjacency now includes Physical Intelligence, Flexion Robotics, DYNA Robotics.
+        Source: <a class="inline" href="https://longbridge.com/en/news/271347359">Longbridge</a>, <a class="inline" href="https://www.nventures.ai/">NVentures</a>.
+      </p>
+    </div>
+
+    <div class="callout soft" style="margin-top: 18px;">
+      <span class="label">Implication</span>
+      A $2.5T deployment overhang plus aggressive corporate VCs means <strong>terms are founder-friendly
+      for high-conviction categories right now</strong>. That asymmetry closes as funds work through their
+      backlog.
+    </div>
+  </section>
+
+  <!-- SECTION C — Category is validating -->
+  <section class="section">
+    <div class="section-label">C · Category validation</div>
+    <h2 class="section-title">Spatial coordination is becoming an investible category.</h2>
+    <p>
+      Two years ago, "shared spatial layer" was a pitch deck bullet. In 2025–26 it became a category
+      with scaled competitors, growth-stage strategics, and quantifiable TAM.
+    </p>
+
+    <div class="grid grid-2" style="margin-top: 18px;">
+      <div class="card">
+        <h3>Category-defining precedent</h3>
+        <h2 style="margin-bottom: 12px;">Niantic Spatial × Snap</h2>
+        <p>
+          Multi-year strategic partnership (June 2025) to build a shared, AI-powered world map.
+          Niantic's Lightship VPS now ships into Lens Studio, Snapchat, and Spectacles.
+        </p>
+        <div class="grid grid-2" style="margin-top: 10px;">
+          <div>
+            <div style="font-family: 'Space Grotesk', system-ui; font-size: 28px; color: var(--text); font-weight: 500;">900M</div>
+            <div style="font-size: 13px; color: var(--text-3);">Snapchatters contributing to the map</div>
+          </div>
+          <div>
+            <div style="font-family: 'Space Grotesk', system-ui; font-size: 28px; color: var(--text); font-weight: 500;">400K</div>
+            <div style="font-size: 13px; color: var(--text-3);">AR developers with distribution</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Adjacent TAM</h3>
+        <h2 style="margin-bottom: 12px;">Digital twin: $29B → $223B</h2>
+        <p>
+          Digital twin market expected to grow from <strong>$29.3B in 2025 to $223.6B by 2034</strong>
+          at a 25.3% CAGR — a direct adjacency for a shared spatial graph with tenancy &amp; updates.
+        </p>
+        <p style="margin-top: 8px;">
+          Spatial computing broader market tracked at <strong>$169B – $852B in 2025</strong> depending
+          on definition; forecast CAGRs of 18–21% to 2034. <em>Note: estimates vary widely — use narrowly when quoted.</em>
+        </p>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top: 18px;">
+      <span class="label">Why this matters</span>
+      Niantic Spatial is taking the <strong>consumer-AR</strong> slice. Auki's positioning —
+      <strong>decentralized, permissioned, multi-vendor, tenant-aware</strong> — is what enterprise
+      and robotics fleets actually need and what a Niantic-style closed platform cannot deliver.
+      The question isn't whether the category exists. It's whether Auki captures the enterprise/robotics
+      half before it consolidates.
+    </div>
+  </section>
+
+  <!-- SECTION D — Compressed window -->
+  <section class="section">
+    <div class="section-label">D · Compressed window</div>
+    <h2 class="section-title">Waiting is structurally expensive.</h2>
+    <p>
+      In a normal market a six-month delay costs dilution. In this one it can cost an entire valuation
+      tier. Two calibrations below.
+    </p>
+
+    <div class="card" style="margin-top: 18px;">
+      <h3>Figure AI · valuation velocity</h3>
+      <div class="timeline">
+        <div class="t-step">
+          <div class="d">Feb 2024</div>
+          <div class="v">$2.6B</div>
+        </div>
+        <div class="t-step">
+          <div class="d">Sep 2025</div>
+          <div class="v">$39B</div>
+        </div>
+        <div class="t-step accent">
+          <div class="d">19 months</div>
+          <div class="v">15× jump</div>
+        </div>
+      </div>
+      <p class="chart-note">
+        Figure AI went from $2.6B to $39B in 19 months despite &lt;100 units deployed and minimal revenue.
+        Source: <a class="inline" href="https://techmarketbriefs.com/pre-ipo/figure-ai/">Tech Market Briefs</a>.
+      </p>
+    </div>
+
+    <div class="grid grid-2" style="margin-top: 18px;">
+      <div class="card">
+        <h3>Mega-Series A is normal now</h3>
+        <p>
+          <strong>Mind Robotics</strong> — $500M Series A, March 2026.<br/>
+          <strong>Apptronik</strong> — $935M cumulative Series A at $5B valuation, February 2026.<br/>
+          <strong>Physical Intelligence</strong> — $280M Series B, Q1 2026.
+        </p>
+        <p style="color: var(--text-3); font-size: 13px;">
+          What qualified as Series B capital in 2023 now closes as Series A. A compressed ladder compresses
+          the window to establish category position.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Capital is concentrating</h3>
+        <p>
+          Top 15 AI deals absorbed <strong>&gt;$100B</strong> in Q1 2026 alone. Mega-rounds above $500M
+          accounted for <strong>85%+ of Q1 2026 AI capital</strong>.
+        </p>
+        <p style="color: var(--text-3); font-size: 13px;">
+          Concentration means the tail gets thin. Companies that don't raise in the window don't just raise
+          smaller — often they don't raise at all.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION E — The Auki case -->
+  <section class="section">
+    <div class="section-label">E · The Auki case to underwrite</div>
+    <h2 class="section-title">What Nils needs to greenlight.</h2>
+    <p>
+      Market conditions above are necessary but not sufficient. Below is the <strong>specific Auki case</strong>
+      — editable. Fill each line with the strongest current truth; the story only needs to be defensible, not
+      perfect.
+    </p>
+
+    <div class="card" style="margin-top: 18px;">
+      <ul class="checklist">
+        <li>
+          <span class="k">Traction</span>
+          <span><span class="fill">[ pilots signed / venues live / robots + AR clients integrated / paying customers / ARR band ]</span></span>
+        </li>
+        <li>
+          <span class="k">Commercial proof</span>
+          <span><span class="fill">[ signed LOIs · top 3 target logos · revenue in next 2 quarters ]</span></span>
+        </li>
+        <li>
+          <span class="k">Moat</span>
+          <span>Decentralized, permissioned, multi-vendor-native spatial coordination layer. Not replaceable by a closed Niantic-style map. Network effects compound as vendors onboard.</span>
+        </li>
+        <li>
+          <span class="k">IP &amp; technical</span>
+          <span><span class="fill">[ patents filed · SDK maturity · supported device classes · live map coverage · uptime SLA ]</span></span>
+        </li>
+        <li>
+          <span class="k">Team &amp; additions</span>
+          <span><span class="fill">[ key hires locked or in pipeline · notable advisors / board candidates ]</span></span>
+        </li>
+        <li>
+          <span class="k">Use of funds</span>
+          <span><span class="fill">[ runway to Series B · hires split (eng / commercial / GTM) · infra spend · marketing to developer community ]</span></span>
+        </li>
+        <li>
+          <span class="k">Round ask</span>
+          <span><span class="fill">[ target raise $ / target pre-money $ / lead-investor profile / preferred closing month / reserve for strategics ]</span></span>
+        </li>
+        <li>
+          <span class="k">Risk to call out</span>
+          <span><span class="fill">[ the honest thing we'd rather an investor hear from us first ]</span></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="callout" style="margin-top: 18px;">
+      <span class="label">Decision</span>
+      Greenlighting means: (1) agree the window thesis above, (2) confirm which placeholders are ready to
+      fill today vs. need 4–6 weeks of prep, and (3) authorize <strong>work on deck + data room this
+      month</strong>, targeting first meetings in early Q3 2026.
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="pagination">
+      <span>Series A · internal</span>
+      <span>Auki Labs</span>
+      <span>Confidential draft · Apr 2026</span>
+    </div>
+    <p>
+      Sources cited inline. Market figures sourced from public VC analytics
+      (<a class="inline" href="https://qubit.capital/blog/series-a-benchmarks-robotics-startups">Qubit</a>,
+      <a class="inline" href="https://www.zeni.ai/blog/series-a-valuations">Zeni</a>,
+      <a class="inline" href="https://growthlist.co/series-a-startups/">Growth List</a>,
+      <a class="inline" href="https://www.accenture.com/cr-en/blogs/strategy/ai-redefining-private-equity">Accenture</a>,
+      <a class="inline" href="https://longbridge.com/en/news/271347359">Longbridge / NVentures</a>,
+      <a class="inline" href="https://www.researchandmarkets.com/reports/5936063/digital-twin-market-size-share-trends-forecast">Research &amp; Markets</a>,
+      <a class="inline" href="https://nianticspatial.com/en/blog/vps-snap-investment">Niantic Spatial</a>,
+      <a class="inline" href="https://techmarketbriefs.com/pre-ipo/figure-ai/">Tech Market Briefs</a>).
+      Aggregators disagree — reconcile against preferred analyst before investor meetings.
+    </p>
+    <p style="margin-top: 8px;">
+      <strong>Confidentiality:</strong> This URL is un-indexed (<code style="color: var(--text-2);">noindex</code>)
+      and not linked from the public page, but GitHub Pages is inherently public. Treat the link itself as
+      internal; move to password-gated hosting if the deck-level argument needs a real wall.
+    </p>
+    <p style="margin-top: 8px;">
+      <a class="inline" href="../">← Public market page</a>
+    </p>
+  </footer>
+
+</main>
+</body>
+</html>
