@@ -4,21 +4,17 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Robotics & embodied AI funding is accelerating | Auki</title>
-<meta name="description" content="Q1 2026 snapshot — where venture capital is flowing in robotics and physical AI, and why it matters for Auki's spatial coordination layer." />
+<meta name="description" content="Public market snapshot — where venture capital is flowing in robotics and physical AI in 2025–26, humanoid deployment data, valuation benchmarks, M&A activity, and adjacent market sizing." />
 <meta property="og:title" content="Robotics & embodied AI funding is accelerating" />
-<meta property="og:description" content="Q1 2026 snapshot — context for Auki, spatial infrastructure for robotics & AR fleets." />
+<meta property="og:description" content="Public market snapshot — robotics & physical AI venture capital, 2025–26. Funding, valuations, humanoid deployment, M&A, strategic activity." />
 <meta property="og:type" content="article" />
 <meta name="theme-color" content="#111111" />
 
 <!--
   Brand (per Auki Labs brand guide):
-    Off-black:   #111111
-    Off-white:   #DBEDED
-    Orange:      #FD9E2F  (used sparingly for contrast / CTAs / key accents)
-    Light green: #CFFFB0  (hover / secondary accent)
-  Primary type:   TT Firs Neue  (commercial; not web-licensed here — using Space Grotesk as fallback)
-  Secondary type: DM Sans       (Google Fonts — matches brand spec)
-  Logo: mono-tone only; vertical primary. Horizontal lockup requires permission; not used here.
+    Off-black #111111 · Off-white #DBEDED
+    Orange #FD9E2F (sparingly) · Light green #CFFFB0 (secondary accent)
+  Type: DM Sans (body) + Space Grotesk (headers fallback for TT Firs Neue)
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,10 +32,6 @@
     --text-3: #6f7a7a;
     --accent: #FD9E2F;
     --accent-soft: #CFFFB0;
-    --chart-1: #DBEDED;   /* US / largest — off-white */
-    --chart-2: #FD9E2F;   /* China — orange (spark) */
-    --chart-3: #CFFFB0;   /* Europe — soft green */
-    --chart-4: #6f7a7a;   /* RoW — muted */
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
@@ -50,63 +42,40 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 96px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px 96px; }
 
-  /* Display type — TT Firs Neue fallback */
-  .display, h1, h2, h3, .eyebrow, .stat .v, .h-rule-label {
+  .display, h1, h2, h3, .eyebrow, .stat .v, .section-title, .section-label {
     font-family: "Space Grotesk", "TT Firs Neue", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   }
 
   .topline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between;
     border-top: 1px solid var(--stroke-2);
-    padding-top: 18px;
-    margin-bottom: 40px;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-2);
-    min-height: 56px;
+    padding-top: 18px; margin-bottom: 40px;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-2); min-height: 56px;
   }
   .topline .logo { display: inline-flex; align-items: center; }
   .topline .logo svg { height: 48px; width: auto; display: block; }
 
   .eyebrow {
-    color: var(--accent);
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 16px;
+    color: var(--accent); font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 500; margin-bottom: 16px;
   }
   h1 {
-    font-size: clamp(30px, 4.4vw, 52px);
-    line-height: 1.08;
-    margin: 0 0 16px;
-    letter-spacing: -0.015em;
-    font-weight: 500;
-    color: var(--text);
+    font-size: clamp(30px, 4.4vw, 52px); line-height: 1.08;
+    margin: 0 0 16px; letter-spacing: -0.015em; font-weight: 500; color: var(--text);
   }
   h2 {
-    font-size: 22px;
-    line-height: 1.2;
-    margin: 0 0 10px;
-    letter-spacing: -0.005em;
-    font-weight: 500;
-    color: var(--text);
+    font-size: 22px; line-height: 1.2; margin: 0 0 10px;
+    letter-spacing: -0.005em; font-weight: 500; color: var(--text);
   }
   h3 {
-    font-size: 12px;
-    margin: 0 0 14px;
-    color: var(--accent);
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-size: 12px; margin: 0 0 14px; color: var(--accent);
+    font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
   }
   p { margin: 0 0 12px; color: var(--text-2); font-size: 15px; }
-  .lede { font-size: 18px; color: var(--text-2); max-width: 68ch; line-height: 1.55; }
+  .lede { font-size: 18px; color: var(--text-2); max-width: 72ch; line-height: 1.55; }
   strong { color: var(--text); font-weight: 700; }
 
   .grid { display: grid; gap: 18px; }
@@ -117,99 +86,71 @@
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   }
 
-  .card {
-    background: var(--panel);
-    border: 1px solid var(--stroke);
-    border-radius: 4px;
-    padding: 24px;
-  }
-  .card.open {
-    background: transparent;
-    border: 0;
+  .section {
+    margin: 56px 0 0;
+    padding-top: 28px;
     border-top: 1px solid var(--stroke-2);
-    border-radius: 0;
-    padding: 24px 0 8px;
+  }
+  .section-label {
+    color: var(--text-3); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(22px, 2.6vw, 30px); line-height: 1.15;
+    letter-spacing: -0.01em; font-weight: 500; margin: 0 0 14px; color: var(--text);
   }
 
+  .card {
+    background: var(--panel); border: 1px solid var(--stroke);
+    border-radius: 4px; padding: 24px;
+  }
   .stat {
-    background: var(--panel);
-    border: 1px solid var(--stroke);
-    border-radius: 4px;
-    padding: 20px 20px 18px;
+    background: var(--panel); border: 1px solid var(--stroke);
+    border-radius: 4px; padding: 20px 20px 18px;
   }
   .stat .v {
-    font-size: clamp(30px, 3.6vw, 40px);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    line-height: 1.05;
+    font-size: clamp(30px, 3.6vw, 40px); font-weight: 500;
+    letter-spacing: -0.02em; color: var(--text); line-height: 1.05;
   }
   .stat .v .u { font-size: 0.55em; color: var(--text-2); font-weight: 400; margin-left: 2px; }
-  .stat .l {
-    margin-top: 10px;
-    font-size: 13px;
-    color: var(--text-2);
-  }
+  .stat .l { margin-top: 10px; font-size: 13px; color: var(--text-2); }
   .stat .delta {
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--accent);
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    margin-top: 8px; font-size: 12px; color: var(--accent);
+    font-weight: 500; letter-spacing: 0.05em;
   }
+  .stat.soft .delta { color: var(--accent-soft); }
+  .stat.hero { background: transparent; border: 1px solid var(--accent); }
+  .stat.hero .v { color: var(--accent); font-size: clamp(36px, 4.4vw, 52px); }
 
   .pill {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 2px;
-    background: transparent;
-    border: 1px solid var(--stroke-2);
-    font-size: 11px;
-    color: var(--text-2);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-right: 6px;
-    margin-top: 6px;
+    display: inline-block; padding: 4px 10px; border-radius: 2px;
+    background: transparent; border: 1px solid var(--stroke-2);
+    font-size: 11px; color: var(--text-2); letter-spacing: 0.08em;
+    text-transform: uppercase; margin-right: 6px; margin-top: 6px;
   }
 
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  th, td {
-    text-align: left;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--stroke);
-  }
-  th {
-    color: var(--text-2);
-    font-weight: 500;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-  }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--stroke); }
+  th { color: var(--text-2); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; }
   td { color: var(--text-2); }
   td.co { color: var(--text); font-weight: 500; }
   td.num { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; white-space: nowrap; }
   tbody tr:last-child td { border-bottom: 0; }
 
   .callout {
-    border: 1px solid var(--stroke-2);
-    border-left: 3px solid var(--accent);
-    border-radius: 2px;
-    padding: 20px 22px;
-    color: var(--text);
-    font-size: 15px;
-    line-height: 1.6;
+    border: 1px solid var(--stroke-2); border-left: 3px solid var(--accent);
+    border-radius: 2px; padding: 20px 22px;
+    color: var(--text); font-size: 15px; line-height: 1.6;
     background: var(--panel);
   }
+  .callout.soft { border-left-color: var(--accent-soft); }
   .callout .label {
-    display: block;
-    color: var(--accent);
+    display: block; color: var(--accent);
     font-family: "Space Grotesk", system-ui, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    font-weight: 500;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 8px; font-weight: 500;
   }
+  .callout.soft .label { color: var(--accent-soft); }
 
   .legend { display: grid; gap: 10px; font-size: 13px; color: var(--text-2); }
   .legend .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -217,29 +158,34 @@
   .legend .row .val { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; }
   .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 1px; }
 
+  .chart-note { font-size: 12px; color: var(--text-3); margin-top: 10px; letter-spacing: 0.02em; }
+
+  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(253,158,47,0.35); }
+  a.inline:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+
   .footer {
-    margin-top: 48px;
-    padding-top: 20px;
+    margin-top: 72px; padding-top: 20px;
     border-top: 1px solid var(--stroke-2);
-    color: var(--text-3);
-    font-size: 12px;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
+    color: var(--text-3); font-size: 12px; line-height: 1.6;
   }
   .footer a { color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; }
   .footer .pagination {
     display: flex; justify-content: space-between; align-items: baseline;
     margin-bottom: 10px;
     font-family: "Space Grotesk", system-ui, sans-serif;
-    font-size: 12px;
-    color: var(--text-2);
-    letter-spacing: 0.12em;
+    font-size: 12px; color: var(--text-2); letter-spacing: 0.12em;
   }
 
-  .chart-note { font-size: 12px; color: var(--text-3); margin-top: 10px; letter-spacing: 0.02em; }
-
-  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(253,158,47,0.35); }
-  a.inline:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
+  /* Fact blocks inside 2-col cards */
+  .fact { padding: 14px 0; border-bottom: 1px solid var(--stroke); display: flex; gap: 14px; align-items: baseline; }
+  .fact:last-child { border-bottom: 0; }
+  .fact .v {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    color: var(--text); font-size: 20px; font-weight: 500;
+    min-width: 110px; flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .fact .l { color: var(--text-2); font-size: 14px; }
 </style>
 </head>
 <body>
@@ -254,25 +200,27 @@
         <path d="M4.2165 137.063L10.5659 117.78H15.7133L22.1411 137.063H18.0257L16.9544 133.392H9.377L8.26651 137.063H4.2165ZM10.2915 130.387H16.066L13.231 120.681L10.2915 130.387ZM38.8062 137.403C37.16 137.403 35.8057 137.242 34.7431 136.92C33.6892 136.598 32.8662 136.145 32.2739 135.561C31.6904 134.978 31.281 134.294 31.0458 133.51C30.8194 132.726 30.7062 131.872 30.7062 130.949V117.767H34.5863V131.119C34.5863 132.391 34.9521 133.249 35.6838 133.693C36.4241 134.137 37.4649 134.359 38.8062 134.359C40.1649 134.359 41.1665 134.133 41.811 133.68C42.4643 133.227 42.7909 132.373 42.7909 131.119V117.767H46.671V130.792C46.671 131.707 46.5622 132.565 46.3444 133.366C46.1267 134.168 45.7347 134.873 45.1686 135.483C44.6112 136.084 43.8186 136.554 42.7909 136.894C41.7631 137.233 40.4349 137.403 38.8062 137.403ZM60.6841 131.289V137.063H56.8039V117.78H60.6841V127.134L68.1831 117.78H72.4683L65.5702 126.39L72.9517 137.063H68.575L62.8136 128.624L60.6841 131.289ZM80.6545 134.163H84.1689V120.667H80.6545V117.78H91.5242V120.667H88.036V134.163H91.5242V137.063H80.6545V134.163Z" fill="#F5F5F5"/>
       </svg>
     </span>
-    <span>Fundraise context · Apr 2026</span>
+    <span>Market snapshot · April 2026</span>
   </div>
 
   <header style="margin-bottom: 44px;">
-    <div class="eyebrow">Market snapshot — Q1 2026</div>
+    <div class="eyebrow">Public market snapshot · 2025–26</div>
     <h1>Robotics &amp; embodied AI<br/>funding is accelerating.</h1>
     <p class="lede">
-      A snapshot of where Q1 2026 venture capital is flowing in robotics and physical AI —
-      and why a <strong>shared spatial coordination layer</strong> across vendors, devices, and apps
-      is the missing infrastructure for the fleets being funded today.
+      Where venture capital is flowing in robotics and physical AI across 2025 and Q1 2026:
+      annual trajectory, humanoid deployment, valuation benchmarks, corporate strategic activity,
+      M&amp;A pace, and adjacent category sizing. All figures are public.
     </p>
     <div>
-      <span class="pill">Q1 2026</span>
-      <span class="pill">Robotics + Embodied AI</span>
-      <span class="pill">Source: Robotomated · Mar 27 2026</span>
+      <span class="pill">Robotics</span>
+      <span class="pill">Embodied AI</span>
+      <span class="pill">Global</span>
+      <span class="pill">Updated Apr 2026</span>
     </div>
   </header>
 
-  <section class="grid grid-4" style="margin-bottom: 28px;">
+  <!-- HERO STATS — Q1 2026 robotics headlines -->
+  <section class="grid grid-4">
     <div class="stat">
       <div class="v">$3.8<span class="u">B</span></div>
       <div class="l">Robotics VC, Q1 2026</div>
@@ -280,12 +228,12 @@
     </div>
     <div class="stat">
       <div class="v">127</div>
-      <div class="l">Disclosed deals</div>
+      <div class="l">Disclosed robotics deals, Q1 2026</div>
       <div class="delta">+30% YoY</div>
     </div>
     <div class="stat">
       <div class="v">$18<span class="u">M</span></div>
-      <div class="l">Median round</div>
+      <div class="l">Median robotics round, Q1 2026</div>
       <div class="delta">+29% YoY</div>
     </div>
     <div class="stat">
@@ -295,87 +243,293 @@
     </div>
   </section>
 
-  <section class="grid grid-2" style="margin-bottom: 28px;">
-    <div class="card">
-      <h3>Quarterly funding</h3>
-      <h2>Q1 2026 vs Q1 2025</h2>
-      <svg viewBox="0 0 320 210" width="100%" height="210" role="img" aria-label="Bar chart Q1 2026 vs Q1 2025 robotics funding">
-        <line x1="40" y1="170" x2="310" y2="170" stroke="var(--stroke-2)" />
-        <line x1="40" y1="40" x2="310" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
-        <line x1="40" y1="105" x2="310" y2="105" stroke="var(--stroke)" stroke-dasharray="2 5" />
-        <text x="34" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui">$4B</text>
-        <text x="34" y="109" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui">$2B</text>
-        <text x="34" y="173" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui">$0</text>
+  <!-- SECTION 1 — Multi-year trajectory -->
+  <section class="section">
+    <div class="section-label">01 · Multi-year trajectory</div>
+    <h2 class="section-title">Robotics VC tripled from 2022 to 2025.</h2>
+    <p>
+      After the 2022–23 venture slowdown, robotics funding rebounded sharply in 2024 and hit a record in
+      2025. 2026 is tracking higher still. Average deal size has grown even faster than total capital —
+      a shift from prototype funding to production-line capital.
+    </p>
 
-        <!-- Q1 2025: $2.4B -->
-        <rect x="90" y="92" width="60" height="78" fill="#2a2a2a" />
-        <rect x="90" y="92" width="60" height="3" fill="#DBEDED" />
-        <text x="120" y="86" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk, system-ui">$2.4B</text>
-        <text x="120" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans, system-ui">Q1 2025</text>
+    <div class="card" style="margin-top: 18px;">
+      <h3>Annual robotics venture capital</h3>
+      <svg viewBox="0 0 640 240" width="100%" height="240" role="img" aria-label="Robotics VC by year 2022 to 2026 run-rate">
+        <line x1="60" y1="200" x2="620" y2="200" stroke="var(--stroke-2)" />
+        <line x1="60" y1="40" x2="620" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <line x1="60" y1="120" x2="620" y2="120" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <text x="54" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$16B</text>
+        <text x="54" y="124" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$8B</text>
+        <text x="54" y="204" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$0</text>
 
-        <!-- Q1 2026: $3.8B (accent) -->
-        <rect x="200" y="46" width="60" height="124" fill="#FD9E2F" />
-        <text x="230" y="40" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk, system-ui">$3.8B</text>
-        <text x="230" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans, system-ui">Q1 2026</text>
+        <!-- Scale: 160px = $16B. 2022=$2.86B → 28.6; 2023=$1.97B → 19.7; 2024≈$6.5B → 65 (estimate between lows); 2025=$8.76B → 87.6; 2026run=$15B → 150 -->
+        <rect x="90" y="171" width="70" height="29" fill="#2a2a2a" />
+        <rect x="90" y="171" width="70" height="3" fill="#DBEDED" />
+        <text x="125" y="166" text-anchor="middle" fill="#DBEDED" font-size="12" font-weight="500" font-family="Space Grotesk">$2.86B</text>
+        <text x="125" y="220" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2022</text>
+
+        <rect x="200" y="180" width="70" height="20" fill="#2a2a2a" />
+        <rect x="200" y="180" width="70" height="3" fill="#DBEDED" />
+        <text x="235" y="175" text-anchor="middle" fill="#DBEDED" font-size="12" font-weight="500" font-family="Space Grotesk">$1.97B</text>
+        <text x="235" y="220" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2023</text>
+
+        <rect x="310" y="135" width="70" height="65" fill="#2a2a2a" />
+        <rect x="310" y="135" width="70" height="3" fill="#DBEDED" />
+        <text x="345" y="130" text-anchor="middle" fill="#DBEDED" font-size="12" font-weight="500" font-family="Space Grotesk">~$6.5B</text>
+        <text x="345" y="220" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2024</text>
+
+        <rect x="420" y="112" width="70" height="88" fill="#2a2a2a" />
+        <rect x="420" y="112" width="70" height="3" fill="#DBEDED" />
+        <text x="455" y="106" text-anchor="middle" fill="#DBEDED" font-size="12" font-weight="500" font-family="Space Grotesk">$8.76B</text>
+        <text x="455" y="220" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2025</text>
+
+        <rect x="530" y="50" width="70" height="150" fill="#FD9E2F" />
+        <text x="565" y="44" text-anchor="middle" fill="#DBEDED" font-size="12" font-weight="500" font-family="Space Grotesk">$15B+</text>
+        <text x="565" y="220" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2026 run-rate</text>
       </svg>
       <p class="chart-note">
-        Run-rate puts 2026 on pace for <strong>$15B+</strong>, vs ~$12B deployed across all of 2025.
+        2024 figure interpolated from multiple trackers reporting "near all-time highs." 2026 is Q1 extrapolated
+        run-rate, not closed annual.
+        Sources: <a class="inline" href="https://newmarketpitch.com/blogs/news/robotics-funding-trends">New Market Pitch</a>,
+        <a class="inline" href="https://robotomated.com/learn/market/robotics-funding-q1-2026">Robotomated</a>,
+        <a class="inline" href="https://fprimecapital.com/blog/from-surge-to-sobriety-the-state-of-robotics-investment-in-2024">F-Prime Capital</a>.
       </p>
     </div>
 
-    <div class="card">
-      <h3>Geography</h3>
-      <h2>Where the $3.8B landed</h2>
-      <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
-        <!-- Donut: US 2.6, China 0.52, Europe 0.38, RoW 0.30 → total 3.8. r=60, C ≈ 376.99 -->
-        <svg viewBox="0 0 170 170" width="170" height="170" role="img" aria-label="Donut chart of Q1 2026 robotics funding by region">
-          <g transform="rotate(-90 85 85)">
-            <circle cx="85" cy="85" r="60" fill="none" stroke="#DBEDED" stroke-width="22" stroke-dasharray="257.94 376.99" />
-            <circle cx="85" cy="85" r="60" fill="none" stroke="#FD9E2F" stroke-width="22" stroke-dasharray="51.57 376.99" stroke-dashoffset="-257.94" />
-            <circle cx="85" cy="85" r="60" fill="none" stroke="#CFFFB0" stroke-width="22" stroke-dasharray="37.70 376.99" stroke-dashoffset="-309.51" />
-            <circle cx="85" cy="85" r="60" fill="none" stroke="#6f7a7a" stroke-width="22" stroke-dasharray="29.74 376.99" stroke-dashoffset="-347.21" />
-          </g>
-          <text x="85" y="82" text-anchor="middle" fill="#DBEDED" font-size="20" font-weight="500" font-family="Space Grotesk, system-ui">$3.8B</text>
-          <text x="85" y="100" text-anchor="middle" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui" letter-spacing="2">Q1 2026</text>
+    <div class="grid grid-3" style="margin-top: 18px;">
+      <div class="stat">
+        <div class="v">2.7×</div>
+        <div class="l">Average robotics deal size</div>
+        <div class="delta">$50M (2022) → $135M (2025)</div>
+      </div>
+      <div class="stat">
+        <div class="v">~50<span class="u">%</span></div>
+        <div class="l">Share of annual funding from top 10 deals</div>
+        <div class="delta">Consistent since 2022</div>
+      </div>
+      <div class="stat soft">
+        <div class="v">40<span class="u">%+</span></div>
+        <div class="l">Humanoids' share of 2024–25 funding</div>
+        <div class="delta">A category that barely existed in 2022</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — Q1 2026 snapshot -->
+  <section class="section">
+    <div class="section-label">02 · Q1 2026 snapshot</div>
+    <h2 class="section-title">Strongest quarter on record for robotics.</h2>
+    <div class="grid grid-2" style="margin-top: 18px;">
+      <div class="card">
+        <h3>Quarterly funding</h3>
+        <h2>Q1 2026 vs Q1 2025</h2>
+        <svg viewBox="0 0 320 210" width="100%" height="210" role="img" aria-label="Bar chart Q1 2026 vs Q1 2025 robotics funding">
+          <line x1="40" y1="170" x2="310" y2="170" stroke="var(--stroke-2)" />
+          <line x1="40" y1="40" x2="310" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
+          <line x1="40" y1="105" x2="310" y2="105" stroke="var(--stroke)" stroke-dasharray="2 5" />
+          <text x="34" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$4B</text>
+          <text x="34" y="109" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$2B</text>
+          <text x="34" y="173" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">$0</text>
+          <rect x="90" y="92" width="60" height="78" fill="#2a2a2a" />
+          <rect x="90" y="92" width="60" height="3" fill="#DBEDED" />
+          <text x="120" y="86" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">$2.4B</text>
+          <text x="120" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">Q1 2025</text>
+          <rect x="200" y="46" width="60" height="124" fill="#FD9E2F" />
+          <text x="230" y="40" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">$3.8B</text>
+          <text x="230" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">Q1 2026</text>
         </svg>
-        <div class="legend" style="flex: 1; min-width: 200px;">
-          <div class="row"><span class="lbl"><span class="swatch" style="background:#DBEDED"></span>United States</span><span class="val">$2.6B · 68%</span></div>
-          <div class="row"><span class="lbl"><span class="swatch" style="background:#FD9E2F"></span>China</span><span class="val">$0.52B · 14%</span></div>
-          <div class="row"><span class="lbl"><span class="swatch" style="background:#CFFFB0"></span>Europe</span><span class="val">$0.38B · 10%</span></div>
-          <div class="row"><span class="lbl"><span class="swatch" style="background:#6f7a7a"></span>Rest of world</span><span class="val">$0.30B · 8%</span></div>
+        <p class="chart-note">Run-rate puts 2026 on pace for <strong>$15B+</strong>, vs ~$12B deployed across all of 2025.</p>
+      </div>
+      <div class="card">
+        <h3>Geography</h3>
+        <h2>Where the $3.8B landed</h2>
+        <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+          <svg viewBox="0 0 170 170" width="170" height="170" role="img" aria-label="Donut chart of Q1 2026 robotics funding by region">
+            <g transform="rotate(-90 85 85)">
+              <circle cx="85" cy="85" r="60" fill="none" stroke="#DBEDED" stroke-width="22" stroke-dasharray="257.94 376.99" />
+              <circle cx="85" cy="85" r="60" fill="none" stroke="#FD9E2F" stroke-width="22" stroke-dasharray="51.57 376.99" stroke-dashoffset="-257.94" />
+              <circle cx="85" cy="85" r="60" fill="none" stroke="#CFFFB0" stroke-width="22" stroke-dasharray="37.70 376.99" stroke-dashoffset="-309.51" />
+              <circle cx="85" cy="85" r="60" fill="none" stroke="#6f7a7a" stroke-width="22" stroke-dasharray="29.74 376.99" stroke-dashoffset="-347.21" />
+            </g>
+            <text x="85" y="82" text-anchor="middle" fill="#DBEDED" font-size="20" font-weight="500" font-family="Space Grotesk">$3.8B</text>
+            <text x="85" y="100" text-anchor="middle" fill="#6f7a7a" font-size="10" font-family="Space Grotesk" letter-spacing="2">Q1 2026</text>
+          </svg>
+          <div class="legend" style="flex: 1; min-width: 200px;">
+            <div class="row"><span class="lbl"><span class="swatch" style="background:#DBEDED"></span>United States</span><span class="val">$2.6B · 68%</span></div>
+            <div class="row"><span class="lbl"><span class="swatch" style="background:#FD9E2F"></span>China</span><span class="val">$0.52B · 14%</span></div>
+            <div class="row"><span class="lbl"><span class="swatch" style="background:#CFFFB0"></span>Europe</span><span class="val">$0.38B · 10%</span></div>
+            <div class="row"><span class="lbl"><span class="swatch" style="background:#6f7a7a"></span>Rest of world</span><span class="val">$0.30B · 8%</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="card" style="margin-bottom: 28px;">
-    <h3>Capital themes</h3>
-    <h2>Where the checks clustered in Q1</h2>
-    <div class="grid grid-2" style="margin-top: 14px;">
-      <div>
+  <!-- SECTION 3 — Broader AI funding context -->
+  <section class="section">
+    <div class="section-label">03 · Broader AI context</div>
+    <h2 class="section-title">AI captured 80% of global venture funding in Q1 2026.</h2>
+    <p>
+      Robotics sits inside a much larger AI capital wave. Q1 2026 was the biggest quarter for global
+      venture on record — and four mega-deals alone absorbed nearly two-thirds of it.
+    </p>
+
+    <div class="grid grid-4" style="margin-top: 18px;">
+      <div class="stat hero">
+        <div class="v">$297<span class="u">B</span></div>
+        <div class="l">Total global VC investment, Q1 2026</div>
+        <div class="delta">Record quarter</div>
+      </div>
+      <div class="stat">
+        <div class="v">80<span class="u">%</span></div>
+        <div class="l">Share of global VC going to AI</div>
+        <div class="delta">55% in Q1 2025</div>
+      </div>
+      <div class="stat">
+        <div class="v">63<span class="u">%</span></div>
+        <div class="l">Share absorbed by top 4 deals</div>
+        <div class="delta">OpenAI · Anthropic · xAI · Waymo</div>
+      </div>
+      <div class="stat soft">
+        <div class="v">11<span class="u">%</span></div>
+        <div class="l">Share of AI deals in robotics + defense</div>
+        <div class="delta">"Physical AI" is a named category now</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 18px;">
+      <h3>Top 4 AI rounds, Q1 2026</h3>
+      <table>
+        <thead><tr><th>Company</th><th>Round</th><th>Valuation</th></tr></thead>
+        <tbody>
+          <tr><td class="co">OpenAI</td><td class="num">$122B</td><td class="num">$852B</td></tr>
+          <tr><td class="co">Anthropic</td><td class="num">$30B Series G</td><td class="num">$380B</td></tr>
+          <tr><td class="co">xAI</td><td class="num">$20B Series E</td><td class="num">—</td></tr>
+          <tr><td class="co">Waymo</td><td class="num">$16B Series D</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+      <p class="chart-note">OpenAI's round alone exceeded the entire prior quarterly global venture record. Source: <a class="inline" href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/">Crunchbase</a>, <a class="inline" href="https://intellizence.com/insights/startup-funding/top-startup-funding-deals-of-q1-2026-record-297-billion-raised-with-ai-dominating/">Intellizence</a>.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — Where the checks clustered (themes) -->
+  <section class="section">
+    <div class="section-label">04 · Capital themes</div>
+    <h2 class="section-title">Where robotics checks clustered in Q1.</h2>
+    <div class="grid grid-2" style="margin-top: 18px;">
+      <div class="card">
         <p><strong>AI for robotics — ~$730M</strong> across three names: Physical Intelligence ($280M), Skild AI ($250M), Covariant ($200M). Thesis: software and foundation models capture outsized value as hardware commoditizes.</p>
         <p><strong>Humanoids — ~$700M</strong>. Apptronik's $350M Series C is the largest. Pace cooling slightly as investors wait for commercial deployment data.</p>
       </div>
-      <div>
+      <div class="card">
         <p><strong>Warehouse / logistics — ~$450M</strong> across 18 deals. The most mature category, mostly growth-stage capital.</p>
         <p><strong>Ag robotics — ~$280M</strong> plus medical robotics ~$180M. Both transitioning from "interesting" to "commercially validated".</p>
       </div>
     </div>
   </section>
 
-  <section class="callout" style="margin-bottom: 36px;">
-    <span class="label">Why this matters for Auki</span>
-    Every category above — humanoids, warehouse fleets, AR + robotics co-deployments, embodied AI —
-    is <strong>multi-vendor and multi-device by default</strong>. Each stack carries its own map truth,
-    its own permissions, its own update cadence. As autonomy frequency rises, coordination errors get
-    expensive fast. <strong>Auki / Posemesh is the shared spatial coordination layer</strong> —
-    canonical spatial graph, tenancy &amp; permissions, live updates — that lets these funded fleets
-    actually compose at a site.
+  <!-- SECTION 5 — Humanoid deep dive -->
+  <section class="section">
+    <div class="section-label">05 · Humanoid deep dive</div>
+    <h2 class="section-title">Humanoids: funded, shipping, and deployed.</h2>
+    <p>
+      Humanoid robotics went from zero commercial footprint in 2022 to roughly 19,000 robots actively
+      deployed in early 2026, with production targets well into six figures this year.
+    </p>
+
+    <div class="grid grid-4" style="margin-top: 18px;">
+      <div class="stat">
+        <div class="v">19,457</div>
+        <div class="l">Humanoid robots actively deployed globally</div>
+        <div class="delta">As of March 2026 · 15 operators</div>
+      </div>
+      <div class="stat">
+        <div class="v">13K–18K</div>
+        <div class="l">Global humanoid shipments, 2025</div>
+        <div class="delta">~90% from China</div>
+      </div>
+      <div class="stat">
+        <div class="v">8,000</div>
+        <div class="l">Tesla Optimus units deployed (cumulative)</div>
+        <div class="delta">Largest single fleet</div>
+      </div>
+      <div class="stat">
+        <div class="v">5,200</div>
+        <div class="l">AGIBot units deployed</div>
+        <div class="delta">39% of '25 humanoid shipments (Q1)</div>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top: 18px;">
+      <div class="card">
+        <h3>Geographic mix</h3>
+        <h2>Who's running the fleets</h2>
+        <div class="fact"><span class="v">58%</span><span class="l">China — ~11,300 humanoid robots in active deployment</span></div>
+        <div class="fact"><span class="v">31%</span><span class="l">United States — ~6,100 units</span></div>
+        <div class="fact"><span class="v">11%</span><span class="l">Rest of world</span></div>
+        <p class="chart-note" style="margin-top: 12px;">
+          Source: <a class="inline" href="https://humanoidintel.ai/humanoid-robots-deployed/">humanoidintel.ai</a> (Mar 2026).
+        </p>
+      </div>
+      <div class="card">
+        <h3>Unit economics &amp; targets</h3>
+        <h2>Production math</h2>
+        <div class="fact"><span class="v">$50–100K</span><span class="l">Apptronik Apollo unit price (estimated)</span></div>
+        <div class="fact"><span class="v">500</span><span class="l">Apollo units in 2026 commercial contract (GXO, Mercedes-Benz)</span></div>
+        <div class="fact"><span class="v">50–100K</span><span class="l">Tesla Optimus production target, 2026</span></div>
+        <div class="fact"><span class="v">$20–30K</span><span class="l">Targeted consumer humanoid price, from 2026 onward</span></div>
+      </div>
+    </div>
   </section>
 
-  <section style="margin-bottom: 28px;">
-    <h3 style="margin-bottom: 18px;">Notable mega-rounds — robotics, Q1 2026</h3>
-    <div class="card" style="padding: 6px 10px 8px;">
+  <!-- SECTION 6 — Valuation benchmarks -->
+  <section class="section">
+    <div class="section-label">06 · Valuation benchmarks</div>
+    <h2 class="section-title">Category valuations are inflating in months, not quarters.</h2>
+    <p>
+      Three reference points from 2024–26 show the pace. These are not outliers — they are the pattern in
+      humanoid and embodied-AI rounds.
+    </p>
+
+    <div class="grid grid-3" style="margin-top: 18px;">
+      <div class="card">
+        <h3>Figure AI</h3>
+        <h2>15× in 19 months</h2>
+        <div class="fact"><span class="v">$2.6B</span><span class="l">Feb 2024 valuation</span></div>
+        <div class="fact"><span class="v">$39B</span><span class="l">Sep 2025 valuation</span></div>
+        <div class="fact"><span class="v">&lt;100</span><span class="l">Units commercially deployed at time of valuation</span></div>
+      </div>
+      <div class="card">
+        <h3>Apptronik</h3>
+        <h2>$5B, ~$935M raised</h2>
+        <div class="fact"><span class="v">$415M</span><span class="l">Initial Series A, 2025</span></div>
+        <div class="fact"><span class="v">$520M</span><span class="l">Series A extension, Feb 2026</span></div>
+        <div class="fact"><span class="v">3×</span><span class="l">Valuation multiple on extension vs initial Series A</span></div>
+      </div>
+      <div class="card">
+        <h3>Mind Robotics</h3>
+        <h2>$500M Series A</h2>
+        <div class="fact"><span class="v">Mar 2026</span><span class="l">Round close</span></div>
+        <div class="fact"><span class="v">Series A</span><span class="l">— not B — at half-billion scale</span></div>
+        <div class="fact"><span class="v">—</span><span class="l">Signals what a "mega-Series A" now looks like</span></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top: 18px;">
+      <span class="label">Market read</span>
+      What qualified as Series B capital in 2023 is now closing as Series A. Median robotics Series A
+      size moved from <strong>$13.4M (2021)</strong> to <strong>$25M+ (2024)</strong>, and the AI-adjacent
+      median pre-money valuation reached <strong>$49.3M</strong> in 2026. AI/ML companies now account for
+      <strong>28% of all Series A activity</strong> — the #1 sector, ahead of fintech and health.
+    </div>
+  </section>
+
+  <!-- SECTION 7 — Mega-rounds table -->
+  <section class="section">
+    <div class="section-label">07 · Mega-rounds table</div>
+    <h2 class="section-title">Notable robotics mega-rounds, Q1 2026.</h2>
+    <div class="card" style="padding: 6px 10px 8px; margin-top: 14px;">
       <table>
         <thead>
           <tr><th>Company</th><th>Round</th><th>Focus</th></tr>
@@ -394,41 +548,202 @@
     </div>
   </section>
 
-  <section class="grid grid-2" style="margin-bottom: 28px;">
-    <div class="card">
-      <h3>Investor signal</h3>
-      <h2>Strategics are leaning in</h2>
-      <p>
-        Corporate venture capital participated in <strong>~40%+</strong> of Q1 deal dollar volume —
-        NVIDIA, Google Ventures, Amazon, Microsoft, plus OEM strategics (Mercedes-Benz, BMW, Foxconn).
-        Signal: appetite for <strong>production paths</strong>, not lab demos alone.
-      </p>
+  <!-- SECTION 8 — Strategic / corporate activity -->
+  <section class="section">
+    <div class="section-label">08 · Strategic activity</div>
+    <h2 class="section-title">Corporate VC and strategics are the aggressive buyer.</h2>
+    <p>
+      Robotics is one of the few sectors where corporate venture capital now rivals pure-play VC for
+      dollar volume. NVIDIA's pace is the clearest signal.
+    </p>
+
+    <div class="grid grid-3" style="margin-top: 18px;">
+      <div class="stat">
+        <div class="v">~40<span class="u">%+</span></div>
+        <div class="l">Q1 2026 robotics dollar volume from corporate VC</div>
+        <div class="delta">NVIDIA · GV · Amazon · Microsoft · OEMs</div>
+      </div>
+      <div class="stat">
+        <div class="v">30×</div>
+        <div class="l">NVIDIA NVentures deal pace</div>
+        <div class="delta">1 deal (2022) → 30 deals (2025)</div>
+      </div>
+      <div class="stat soft">
+        <div class="v">4</div>
+        <div class="l">Largest robotics deals of '24–'25 with Jeff Bezos participation</div>
+        <div class="delta">Individual + corporate capital converging</div>
+      </div>
     </div>
-    <div class="card">
-      <h3>Pipeline</h3>
-      <h2>Seed bench is healthy</h2>
-      <p>
-        <strong>34 seed deals</strong> in Q1 with average size up to <strong>~$3.8M</strong>
-        (vs ~$2.9M YoY). Robotics remains capital-intensive vs pure software — a structural reason
-        coordination infrastructure (shared maps, shared tenancy) will be bought, not rebuilt.
+
+    <div class="card" style="margin-top: 18px;">
+      <h3>NVIDIA NVentures · deal pace</h3>
+      <svg viewBox="0 0 340 200" width="100%" height="200" role="img" aria-label="NVIDIA NVentures deal count 2022 vs 2025">
+        <line x1="50" y1="170" x2="330" y2="170" stroke="var(--stroke-2)" />
+        <line x1="50" y1="40" x2="330" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <line x1="50" y1="105" x2="330" y2="105" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <text x="44" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">30</text>
+        <text x="44" y="109" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">15</text>
+        <text x="44" y="173" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk">0</text>
+        <rect x="100" y="165" width="60" height="5" fill="#2a2a2a" />
+        <rect x="100" y="165" width="60" height="3" fill="#DBEDED" />
+        <text x="130" y="159" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">1 deal</text>
+        <text x="130" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2022</text>
+        <rect x="220" y="40" width="60" height="130" fill="#FD9E2F" />
+        <text x="250" y="34" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk">30 deals</text>
+        <text x="250" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans">2025</text>
+      </svg>
+      <p class="chart-note">
+        Portfolio in robotics adjacency: Physical Intelligence, Flexion Robotics, DYNA Robotics.
+        Sources: <a class="inline" href="https://longbridge.com/en/news/271347359">Longbridge</a>,
+        <a class="inline" href="https://www.nventures.ai/">NVentures</a>.
       </p>
     </div>
   </section>
 
+  <!-- SECTION 9 — M&A pace -->
+  <section class="section">
+    <div class="section-label">09 · M&amp;A and consolidation</div>
+    <h2 class="section-title">Consolidation is accelerating.</h2>
+    <p>
+      27 professional service robot acquisitions closed in 2025, and Q1 2026 added several structurally
+      significant deals. The pattern: larger platforms buying specialized capabilities (autonomy,
+      verticals, form factors) rather than rollups for scale alone.
+    </p>
+
+    <div class="card" style="margin-top: 18px; padding: 6px 10px 8px;">
+      <table>
+        <thead><tr><th>Acquirer</th><th>Target</th><th>Thesis</th><th>Date</th></tr></thead>
+        <tbody>
+          <tr><td class="co">Serve Robotics</td><td>Diligent Robotics ($29M)</td><td>Sidewalk delivery → indoor healthcare autonomy</td><td class="num">Jan 2026</td></tr>
+          <tr><td class="co">Symbotic</td><td>Fox Robotics</td><td>End-to-end warehouse autonomy (inc. autonomous forklifts)</td><td class="num">Mar 2026</td></tr>
+          <tr><td class="co">Agile Robots</td><td>thyssenkrupp Automation Engineering</td><td>Physical AI + 75 yrs industrial engineering</td><td class="num">Apr 2026</td></tr>
+        </tbody>
+      </table>
+      <p class="chart-note" style="padding: 0 14px 10px;">
+        Sources: <a class="inline" href="https://www.globenewswire.com/news-release/2026/01/20/3222303/0/en/serve-robotics-to-acquire-diligent-robotics-expanding-physical-ai-platform-beyond-the-sidewalk.html">Serve/Diligent</a>,
+        <a class="inline" href="https://roboticsandautomationnews.com/2026/04/01/agile-robots-closes-acquisition-of-thyssenkrupp-automation-engineering/100337/">Agile/thyssenkrupp</a>,
+        <a class="inline" href="https://tracxn.com/d/insights/merger-acquisition-deals-brief/symbotic-acquires-fox-robotics/__TikoOd3WYXxYirvRQ89ifGV9Q1EFRDVCkvTPqfRwufI">Symbotic/Fox</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 10 — Adjacent markets -->
+  <section class="section">
+    <div class="section-label">10 · Adjacent markets</div>
+    <h2 class="section-title">The infrastructure layer is sizing up.</h2>
+    <p>
+      The software and spatial-infrastructure layers around robotics are growing alongside hardware.
+      Two adjacencies worth watching:
+    </p>
+
+    <div class="grid grid-2" style="margin-top: 18px;">
+      <div class="card">
+        <h3>Digital twin market</h3>
+        <h2>$29B (2025) → $224B (2034)</h2>
+        <p>
+          25.3% CAGR forecast through 2034. Driven by manufacturing, 5G, and AI/ML predictive analytics.
+          Direct adjacency for anyone building a live spatial graph with tenancy and updates.
+        </p>
+        <p class="chart-note">
+          Source: <a class="inline" href="https://www.researchandmarkets.com/reports/5936063/digital-twin-market-size-share-trends-forecast">Research &amp; Markets</a>.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Spatial computing market</h3>
+        <h2>$169B – $852B (2025)</h2>
+        <p>
+          Projections vary widely by definition; forecasts reach <strong>$3.98T by 2034</strong> at 18.7%
+          CAGR on broader scope. Use with care — the spread reflects what's counted (devices, software,
+          services) as much as the market itself.
+        </p>
+        <p class="chart-note">
+          Sources: <a class="inline" href="https://www.researchnester.com/reports/spatial-computing-market/2996">Research Nester</a>,
+          <a class="inline" href="https://dimensionmarketresearch.com/report/spatial-computing-market/">DMR</a>.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout soft" style="margin-top: 18px;">
+      <span class="label">Precedent</span>
+      <strong>Niantic Spatial × Snap</strong> (June 2025) — multi-year partnership to build a shared
+      AI-powered world map. Niantic's VPS now ships into Lens Studio, Snapchat, and Spectacles, giving
+      <strong>900M Snapchatters</strong> and <strong>400K AR developers</strong> distribution-scale access
+      to a single spatial layer. The category has its first consumer-scale validation.
+    </div>
+  </section>
+
+  <!-- SECTION 11 — Seed + pipeline -->
+  <section class="section">
+    <div class="section-label">11 · Seed pipeline</div>
+    <h2 class="section-title">The next wave is already funded.</h2>
+    <div class="grid grid-3" style="margin-top: 18px;">
+      <div class="stat">
+        <div class="v">34</div>
+        <div class="l">Seed deals in robotics, Q1 2026</div>
+        <div class="delta">Healthy pipeline for '27 Series A flow</div>
+      </div>
+      <div class="stat">
+        <div class="v">$3.8<span class="u">M</span></div>
+        <div class="l">Average seed round size</div>
+        <div class="delta">Up from ~$2.9M YoY</div>
+      </div>
+      <div class="stat soft">
+        <div class="v">$2.5<span class="u">T+</span></div>
+        <div class="l">Global VC / PE dry powder</div>
+        <div class="delta">&gt;50% aged 2–5 yrs (deployment pressure)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12 — IPO / exit pipeline -->
+  <section class="section">
+    <div class="section-label">12 · Exit outlook</div>
+    <h2 class="section-title">IPO window likely opens 2027–28 for category leaders.</h2>
+    <p>
+      Humanoid and embodied-AI leaders remain private for now — hardware-intensive businesses need
+      production scale and multi-hundred-million revenue before public markets, and neither Figure AI
+      nor Apptronik is there yet. Analyst expectation is that the first major humanoid robotics IPO
+      lands in <strong>2027–2028</strong>.
+    </p>
+    <p style="color: var(--text-3); font-size: 13px;">
+      Source: <a class="inline" href="https://humanoidintel.ai/news/apptronik-ipo-timeline-humanoid-startups-private">humanoidintel.ai</a>.
+      Current Apollo and Figure deployments generate single-digit millions in ARR — well below the
+      $100M+ threshold typical for tech IPOs.
+    </p>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="pagination">
-      <span>01 / 01</span>
+      <span>Market snapshot</span>
       <span>Auki Labs</span>
-      <span>2026</span>
+      <span>April 2026</span>
     </div>
     <p>
-      Source: Robotomated, <a class="inline" href="https://robotomated.com/learn/market/robotics-funding-q1-2026" rel="noopener">"Robotics Funding Q1 2026"</a> (updated Mar 27, 2026).
-      Other aggregators publish materially different totals — reconcile against your preferred analyst
-      (CB Insights / PitchBook) before quoting in legal materials or the data room.
+      <strong>Sources (public).</strong>
+      <a class="inline" href="https://robotomated.com/learn/market/robotics-funding-q1-2026">Robotomated</a> ·
+      <a class="inline" href="https://newmarketpitch.com/blogs/news/robotics-funding-trends">New Market Pitch</a> ·
+      <a class="inline" href="https://fprimecapital.com/blog/from-surge-to-sobriety-the-state-of-robotics-investment-in-2024">F-Prime Capital</a> ·
+      <a class="inline" href="https://qubit.capital/blog/series-a-benchmarks-robotics-startups">Qubit Capital</a> ·
+      <a class="inline" href="https://www.zeni.ai/blog/series-a-valuations">Zeni</a> ·
+      <a class="inline" href="https://growthlist.co/series-a-startups/">Growth List</a> ·
+      <a class="inline" href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/">Crunchbase</a> ·
+      <a class="inline" href="https://intellizence.com/insights/startup-funding/top-startup-funding-deals-of-q1-2026-record-297-billion-raised-with-ai-dominating/">Intellizence</a> ·
+      <a class="inline" href="https://longbridge.com/en/news/271347359">Longbridge / NVentures</a> ·
+      <a class="inline" href="https://humanoidintel.ai/humanoid-robots-deployed/">humanoidintel.ai</a> ·
+      <a class="inline" href="https://techmarketbriefs.com/pre-ipo/figure-ai/">Tech Market Briefs</a> ·
+      <a class="inline" href="https://www.cnbc.com/2026/02/11/apptronik-raises-520-million-at-5-billion-valuation-for-apollo-robot.html/">CNBC (Apptronik)</a> ·
+      <a class="inline" href="https://www.researchandmarkets.com/reports/5936063/digital-twin-market-size-share-trends-forecast">Research &amp; Markets</a> ·
+      <a class="inline" href="https://nianticspatial.com/en/blog/vps-snap-investment">Niantic Spatial</a>.
     </p>
-    <p style="margin-top: 8px;">
-      Prepared as fundraise context for Auki — spatial infrastructure for robotics &amp; AR fleets.
-      Confidential framing; figures are public.
+    <p style="margin-top: 10px;">
+      <strong>Caveat.</strong> Aggregators disagree on robotics funding totals; different deal universes and
+      inclusion rules produce meaningfully different numbers. Reconcile against your preferred analyst
+      (CB Insights, PitchBook, Crunchbase) before using any figure in legal or regulatory materials.
+      Adjacent-market sizings (digital twin, spatial computing) vary especially widely.
+    </p>
+    <p style="margin-top: 10px;">
+      Prepared by <strong>Auki</strong> — spatial infrastructure for robotics &amp; AR fleets. Public market figures.
     </p>
   </footer>
 

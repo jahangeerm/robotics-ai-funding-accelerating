@@ -1,7 +1,8 @@
 # Robotics & embodied AI funding is accelerating
 
-A single-page Q1 2026 funding snapshot prepared as **fundraise context for Auki** —
-spatial infrastructure for robotics & AR fleets.
+A public market snapshot of robotics and physical-AI venture capital across 2025
+and Q1 2026 — multi-year trajectory, humanoid deployment, valuation benchmarks,
+strategic/corporate activity, M&A pace, and adjacent category sizing.
 
 **Live page:** https://jahangeerm.github.io/robotics-ai-funding-accelerating/
 
