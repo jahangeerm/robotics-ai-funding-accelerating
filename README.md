@@ -1,9 +1,9 @@
-# Robotics & embodied AI funding — Q1 2026
+# Robotics & embodied AI funding is accelerating
 
-A single-page funding snapshot prepared as **fundraise context for Auki** —
+A single-page Q1 2026 funding snapshot prepared as **fundraise context for Auki** —
 spatial infrastructure for robotics & AR fleets.
 
-**Live page:** https://jahangeerm.github.io/auki-funding-snapshot/
+**Live page:** https://jahangeerm.github.io/robotics-ai-funding-accelerating/
 
 ## What this is
 
