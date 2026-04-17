@@ -8,159 +8,275 @@
 <meta property="og:title" content="Robotics & embodied AI funding — Q1 2026" />
 <meta property="og:description" content="Context snapshot for Auki — spatial infrastructure for robotics & AR fleets." />
 <meta property="og:type" content="article" />
+<meta name="theme-color" content="#111111" />
+
+<!--
+  Brand (per Auki Labs brand guide):
+    Off-black:   #111111
+    Off-white:   #DBEDED
+    Orange:      #FD9E2F  (used sparingly for contrast / CTAs / key accents)
+    Light green: #CFFFB0  (hover / secondary accent)
+  Primary type:   TT Firs Neue  (commercial; not web-licensed here — using Space Grotesk as fallback)
+  Secondary type: DM Sans       (Google Fonts — matches brand spec)
+  Logo: mono-tone only; vertical primary. Horizontal lockup requires permission; not used here.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
 <style>
   :root {
-    --bg: #0b0d10;
-    --panel: #14171c;
-    --panel-2: #1a1e25;
-    --stroke: #232831;
-    --stroke-2: #2c333d;
-    --text: #e8ebf0;
-    --text-2: #aab2bd;
-    --text-3: #6f7884;
-    --accent: #5ad1c7;
-    --accent-2: #8b8cf7;
-    --warn: #e7b75f;
-    --good: #6ed29a;
-  }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --bg: #fafbfc;
-      --panel: #ffffff;
-      --panel-2: #f3f5f8;
-      --stroke: #e4e8ee;
-      --stroke-2: #d6dbe3;
-      --text: #14171c;
-      --text-2: #495160;
-      --text-3: #7a8493;
-      --accent: #1f9d92;
-      --accent-2: #5b5dd6;
-    }
+    --bg: #111111;
+    --panel: #181818;
+    --panel-2: #1f1f1f;
+    --stroke: #2a2a2a;
+    --stroke-2: #3a3a3a;
+    --text: #DBEDED;
+    --text-2: #a9b8b8;
+    --text-3: #6f7a7a;
+    --accent: #FD9E2F;
+    --accent-soft: #CFFFB0;
+    --chart-1: #DBEDED;   /* US / largest — off-white */
+    --chart-2: #FD9E2F;   /* China — orange (spark) */
+    --chart-3: #CFFFB0;   /* Europe — soft green */
+    --chart-4: #6f7a7a;   /* RoW — muted */
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
-    line-height: 1.5;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 96px; }
+
+  /* Display type — TT Firs Neue fallback */
+  .display, h1, h2, h3, .eyebrow, .stat .v, .h-rule-label {
+    font-family: "Space Grotesk", "TT Firs Neue", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  .topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--stroke-2);
+    padding-top: 14px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-2);
+  }
+  .topline .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topline .mark-box {
+    width: 18px;
+    height: 22px;
+    border: 1.5px solid var(--text);
+    display: inline-block;
+    position: relative;
+  }
+  .topline .mark-box::before,
+  .topline .mark-box::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    width: 1.5px;
+    background: var(--text);
+  }
+  .topline .mark-box::before { left: 5px; transform: skewX(18deg); }
+  .topline .mark-box::after  { right: 5px; transform: skewX(-18deg); }
+  .topline .wordmark { font-weight: 600; letter-spacing: 0.3em; }
+
   .eyebrow {
     color: var(--accent);
-    font-size: 13px;
-    letter-spacing: 0.12em;
+    font-size: 12px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 12px;
+    font-weight: 500;
+    margin-bottom: 16px;
   }
   h1 {
-    font-size: clamp(28px, 4vw, 44px);
-    line-height: 1.15;
-    margin: 0 0 12px;
-    letter-spacing: -0.01em;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 1.08;
+    margin: 0 0 16px;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    color: var(--text);
   }
   h2 {
     font-size: 22px;
-    line-height: 1.25;
-    margin: 0 0 12px;
+    line-height: 1.2;
+    margin: 0 0 10px;
     letter-spacing: -0.005em;
+    font-weight: 500;
+    color: var(--text);
   }
   h3 {
-    font-size: 15px;
-    margin: 0 0 8px;
-    color: var(--text-2);
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-size: 12px;
+    margin: 0 0 14px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
   }
   p { margin: 0 0 12px; color: var(--text-2); font-size: 15px; }
-  .lede { font-size: 17px; color: var(--text-2); max-width: 70ch; }
-  strong { color: var(--text); font-weight: 600; }
-  .grid { display: grid; gap: 16px; }
+  .lede { font-size: 18px; color: var(--text-2); max-width: 68ch; line-height: 1.55; }
+  strong { color: var(--text); font-weight: 700; }
+
+  .grid { display: grid; gap: 18px; }
   .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   @media (max-width: 720px) {
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   }
-  .stack { display: flex; flex-direction: column; gap: 16px; }
-  .stack-lg { gap: 28px; }
+
   .card {
     background: var(--panel);
     border: 1px solid var(--stroke);
-    border-radius: 14px;
-    padding: 22px;
+    border-radius: 4px;
+    padding: 24px;
   }
+  .card.open {
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--stroke-2);
+    border-radius: 0;
+    padding: 24px 0 8px;
+  }
+
   .stat {
-    background: var(--panel-2);
+    background: var(--panel);
     border: 1px solid var(--stroke);
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: 4px;
+    padding: 20px 20px 18px;
   }
   .stat .v {
-    font-size: clamp(24px, 3vw, 32px);
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: clamp(30px, 3.6vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
     color: var(--text);
-    line-height: 1.1;
+    line-height: 1.05;
   }
+  .stat .v .u { font-size: 0.55em; color: var(--text-2); font-weight: 400; margin-left: 2px; }
   .stat .l {
-    margin-top: 6px;
+    margin-top: 10px;
     font-size: 13px;
-    color: var(--text-3);
+    color: var(--text-2);
   }
   .stat .delta {
     margin-top: 8px;
     font-size: 12px;
-    color: var(--good);
+    color: var(--accent);
     font-weight: 500;
+    letter-spacing: 0.05em;
   }
+
   .pill {
     display: inline-block;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: var(--panel-2);
+    padding: 4px 10px;
+    border-radius: 2px;
+    background: transparent;
     border: 1px solid var(--stroke-2);
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-right: 6px;
+    margin-top: 6px;
   }
-  .accent { color: var(--accent); }
-  .accent-2 { color: var(--accent-2); }
+
   table { width: 100%; border-collapse: collapse; font-size: 14px; }
   th, td {
     text-align: left;
-    padding: 10px 12px;
+    padding: 12px 14px;
     border-bottom: 1px solid var(--stroke);
   }
-  th { color: var(--text-3); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
-  td.num { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; }
-  hr.sep { border: 0; border-top: 1px solid var(--stroke); margin: 8px 0; }
-  .footer {
-    margin-top: 36px;
-    padding-top: 20px;
-    border-top: 1px solid var(--stroke);
-    color: var(--text-3);
-    font-size: 13px;
+  th {
+    color: var(--text-2);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
   }
-  .footer a { color: var(--text-2); }
-  .legend { display: flex; flex-wrap: wrap; gap: 10px 16px; font-size: 13px; color: var(--text-2); margin-top: 8px; }
-  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+  td { color: var(--text-2); }
+  td.co { color: var(--text); font-weight: 500; }
+  td.num { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; white-space: nowrap; }
+  tbody tr:last-child td { border-bottom: 0; }
+
   .callout {
-    background: var(--panel-2);
+    border: 1px solid var(--stroke-2);
     border-left: 3px solid var(--accent);
-    border-radius: 6px;
-    padding: 14px 16px;
+    border-radius: 2px;
+    padding: 20px 22px;
     color: var(--text);
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.6;
+    background: var(--panel);
   }
+  .callout .label {
+    display: block;
+    color: var(--accent);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .legend { display: grid; gap: 10px; font-size: 13px; color: var(--text-2); }
+  .legend .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .legend .row .lbl { display: flex; align-items: center; gap: 10px; }
+  .legend .row .val { font-variant-numeric: tabular-nums; color: var(--text); font-weight: 500; }
+  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 1px; }
+
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--stroke-2);
+    color: var(--text-3);
+    font-size: 12px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+  .footer a { color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; }
+  .footer .pagination {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 10px;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 12px;
+    color: var(--text-2);
+    letter-spacing: 0.12em;
+  }
+
+  .chart-note { font-size: 12px; color: var(--text-3); margin-top: 10px; letter-spacing: 0.02em; }
+
+  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(253,158,47,0.35); }
+  a.inline:hover { color: var(--accent-soft); border-bottom-color: var(--accent-soft); }
 </style>
 </head>
 <body>
 <main class="wrap">
 
-  <header class="stack" style="margin-bottom: 28px;">
-    <div class="eyebrow">Auki — fundraise context</div>
-    <h1>Robotics &amp; embodied AI funding<br/>are accelerating into 2026.</h1>
+  <div class="topline">
+    <span class="mark">
+      <span class="mark-box" aria-hidden="true"></span>
+      <span class="wordmark">AUKI</span>
+    </span>
+    <span>Fundraise context · Apr 2026</span>
+  </div>
+
+  <header style="margin-bottom: 44px;">
+    <div class="eyebrow">Market snapshot — Q1 2026</div>
+    <h1>Robotics &amp; embodied AI<br/>funding is accelerating.</h1>
     <p class="lede">
       A snapshot of where Q1 2026 venture capital is flowing in robotics and physical AI —
       and why a <strong>shared spatial coordination layer</strong> across vendors, devices, and apps
@@ -169,13 +285,13 @@
     <div>
       <span class="pill">Q1 2026</span>
       <span class="pill">Robotics + Embodied AI</span>
-      <span class="pill">Source: Robotomated, Mar 27 2026</span>
+      <span class="pill">Source: Robotomated · Mar 27 2026</span>
     </div>
   </header>
 
-  <section class="grid grid-4" style="margin-bottom: 24px;">
+  <section class="grid grid-4" style="margin-bottom: 28px;">
     <div class="stat">
-      <div class="v">$3.8<span style="font-size:0.6em;color:var(--text-2);">B</span></div>
+      <div class="v">$3.8<span class="u">B</span></div>
       <div class="l">Robotics VC, Q1 2026</div>
       <div class="delta">+58% YoY</div>
     </div>
@@ -185,7 +301,7 @@
       <div class="delta">+30% YoY</div>
     </div>
     <div class="stat">
-      <div class="v">$18<span style="font-size:0.6em;color:var(--text-2);">M</span></div>
+      <div class="v">$18<span class="u">M</span></div>
       <div class="l">Median round</div>
       <div class="delta">+29% YoY</div>
     </div>
@@ -196,107 +312,100 @@
     </div>
   </section>
 
-  <section class="grid grid-2" style="margin-bottom: 24px;">
+  <section class="grid grid-2" style="margin-bottom: 28px;">
     <div class="card">
       <h3>Quarterly funding</h3>
       <h2>Q1 2026 vs Q1 2025</h2>
-      <!-- Bar chart: 2 bars -->
-      <svg viewBox="0 0 320 200" width="100%" height="200" role="img" aria-label="Bar chart Q1 2026 vs Q1 2025 robotics funding">
+      <svg viewBox="0 0 320 210" width="100%" height="210" role="img" aria-label="Bar chart Q1 2026 vs Q1 2025 robotics funding">
         <line x1="40" y1="170" x2="310" y2="170" stroke="var(--stroke-2)" />
-        <!-- gridlines -->
-        <line x1="40" y1="40" x2="310" y2="40" stroke="var(--stroke)" stroke-dasharray="3 4" />
-        <line x1="40" y1="105" x2="310" y2="105" stroke="var(--stroke)" stroke-dasharray="3 4" />
-        <text x="34" y="44" text-anchor="end" fill="var(--text-3)" font-size="10">$4B</text>
-        <text x="34" y="109" text-anchor="end" fill="var(--text-3)" font-size="10">$2B</text>
-        <text x="34" y="173" text-anchor="end" fill="var(--text-3)" font-size="10">$0</text>
-        <!-- 2024: $2.4B, scale 4B = 130px -->
-        <rect x="90" y="92" width="60" height="78" rx="3" fill="var(--accent-2)" opacity="0.55" />
-        <text x="120" y="86" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">$2.4B</text>
-        <text x="120" y="188" text-anchor="middle" fill="var(--text-2)" font-size="11">Q1 2025</text>
-        <!-- Q1 2026: $3.8B = 124px -->
-        <rect x="200" y="46" width="60" height="124" rx="3" fill="var(--accent)" />
-        <text x="230" y="40" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">$3.8B</text>
-        <text x="230" y="188" text-anchor="middle" fill="var(--text-2)" font-size="11">Q1 2026</text>
+        <line x1="40" y1="40" x2="310" y2="40" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <line x1="40" y1="105" x2="310" y2="105" stroke="var(--stroke)" stroke-dasharray="2 5" />
+        <text x="34" y="44" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui">$4B</text>
+        <text x="34" y="109" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui">$2B</text>
+        <text x="34" y="173" text-anchor="end" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui">$0</text>
+
+        <!-- Q1 2025: $2.4B -->
+        <rect x="90" y="92" width="60" height="78" fill="#2a2a2a" />
+        <rect x="90" y="92" width="60" height="3" fill="#DBEDED" />
+        <text x="120" y="86" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk, system-ui">$2.4B</text>
+        <text x="120" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans, system-ui">Q1 2025</text>
+
+        <!-- Q1 2026: $3.8B (accent) -->
+        <rect x="200" y="46" width="60" height="124" fill="#FD9E2F" />
+        <text x="230" y="40" text-anchor="middle" fill="#DBEDED" font-size="13" font-weight="500" font-family="Space Grotesk, system-ui">$3.8B</text>
+        <text x="230" y="190" text-anchor="middle" fill="#a9b8b8" font-size="11" font-family="DM Sans, system-ui">Q1 2026</text>
       </svg>
-      <p style="font-size:13px;color:var(--text-3);margin-top:8px;">
-        Run-rate puts 2026 on pace for <strong>$15B+</strong>, vs ~$12B deployed in 2025.
+      <p class="chart-note">
+        Run-rate puts 2026 on pace for <strong>$15B+</strong>, vs ~$12B deployed across all of 2025.
       </p>
     </div>
 
     <div class="card">
       <h3>Geography</h3>
       <h2>Where the $3.8B landed</h2>
-      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
-        <!-- Donut: US 2.6, China 0.52, Europe 0.38, RoW 0.30 → total 3.8 -->
-        <svg viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Donut chart of Q1 2026 robotics funding by region">
-          <!-- using stroke-dasharray on circle r=60, circumference ~ 376.99 -->
-          <g transform="rotate(-90 80 80)">
-            <!-- US 2.6/3.8 = 68.42% → 257.94 -->
-            <circle cx="80" cy="80" r="60" fill="none" stroke="var(--accent)" stroke-width="22" stroke-dasharray="257.94 376.99" />
-            <!-- China 0.52/3.8 = 13.68% → 51.57, offset 257.94 -->
-            <circle cx="80" cy="80" r="60" fill="none" stroke="var(--accent-2)" stroke-width="22" stroke-dasharray="51.57 376.99" stroke-dashoffset="-257.94" />
-            <!-- Europe 0.38/3.8 = 10% → 37.70, offset 309.51 -->
-            <circle cx="80" cy="80" r="60" fill="none" stroke="var(--warn)" stroke-width="22" stroke-dasharray="37.70 376.99" stroke-dashoffset="-309.51" />
-            <!-- RoW 0.30/3.8 = 7.89% → 29.74, offset 347.21 -->
-            <circle cx="80" cy="80" r="60" fill="none" stroke="var(--good)" stroke-width="22" stroke-dasharray="29.74 376.99" stroke-dashoffset="-347.21" />
+      <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+        <!-- Donut: US 2.6, China 0.52, Europe 0.38, RoW 0.30 → total 3.8. r=60, C ≈ 376.99 -->
+        <svg viewBox="0 0 170 170" width="170" height="170" role="img" aria-label="Donut chart of Q1 2026 robotics funding by region">
+          <g transform="rotate(-90 85 85)">
+            <circle cx="85" cy="85" r="60" fill="none" stroke="#DBEDED" stroke-width="22" stroke-dasharray="257.94 376.99" />
+            <circle cx="85" cy="85" r="60" fill="none" stroke="#FD9E2F" stroke-width="22" stroke-dasharray="51.57 376.99" stroke-dashoffset="-257.94" />
+            <circle cx="85" cy="85" r="60" fill="none" stroke="#CFFFB0" stroke-width="22" stroke-dasharray="37.70 376.99" stroke-dashoffset="-309.51" />
+            <circle cx="85" cy="85" r="60" fill="none" stroke="#6f7a7a" stroke-width="22" stroke-dasharray="29.74 376.99" stroke-dashoffset="-347.21" />
           </g>
-          <text x="80" y="76" text-anchor="middle" fill="var(--text)" font-size="20" font-weight="600">$3.8B</text>
-          <text x="80" y="94" text-anchor="middle" fill="var(--text-3)" font-size="11">Q1 2026</text>
+          <text x="85" y="82" text-anchor="middle" fill="#DBEDED" font-size="20" font-weight="500" font-family="Space Grotesk, system-ui">$3.8B</text>
+          <text x="85" y="100" text-anchor="middle" fill="#6f7a7a" font-size="10" font-family="Space Grotesk, system-ui" letter-spacing="2">Q1 2026</text>
         </svg>
-        <div class="legend" style="flex-direction:column; gap:8px;">
-          <div><span class="swatch" style="background:var(--accent)"></span>United States — $2.6B (68%)</div>
-          <div><span class="swatch" style="background:var(--accent-2)"></span>China — $0.52B (14%)</div>
-          <div><span class="swatch" style="background:var(--warn)"></span>Europe — $0.38B (10%)</div>
-          <div><span class="swatch" style="background:var(--good)"></span>Rest of world — $0.30B (8%)</div>
+        <div class="legend" style="flex: 1; min-width: 200px;">
+          <div class="row"><span class="lbl"><span class="swatch" style="background:#DBEDED"></span>United States</span><span class="val">$2.6B · 68%</span></div>
+          <div class="row"><span class="lbl"><span class="swatch" style="background:#FD9E2F"></span>China</span><span class="val">$0.52B · 14%</span></div>
+          <div class="row"><span class="lbl"><span class="swatch" style="background:#CFFFB0"></span>Europe</span><span class="val">$0.38B · 10%</span></div>
+          <div class="row"><span class="lbl"><span class="swatch" style="background:#6f7a7a"></span>Rest of world</span><span class="val">$0.30B · 8%</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="card" style="margin-bottom: 24px;">
+  <section class="card" style="margin-bottom: 28px;">
     <h3>Capital themes</h3>
     <h2>Where the checks clustered in Q1</h2>
-    <div class="grid grid-2" style="margin-top: 12px;">
+    <div class="grid grid-2" style="margin-top: 14px;">
       <div>
-        <div style="font-size:14px;color:var(--text-2);">
-          <p><strong class="accent">AI for robotics ~ $730M</strong> across three names — Physical Intelligence ($280M), Skild AI ($250M), Covariant ($200M). Thesis: software / foundation models capture outsized value as hardware commoditizes.</p>
-          <p><strong class="accent">Humanoids ~ $700M</strong> — Apptronik $350M Series C the largest. Pace cooling slightly as investors wait for commercial deployment data.</p>
-        </div>
+        <p><strong>AI for robotics — ~$730M</strong> across three names: Physical Intelligence ($280M), Skild AI ($250M), Covariant ($200M). Thesis: software and foundation models capture outsized value as hardware commoditizes.</p>
+        <p><strong>Humanoids — ~$700M</strong>. Apptronik's $350M Series C is the largest. Pace cooling slightly as investors wait for commercial deployment data.</p>
       </div>
       <div>
-        <div style="font-size:14px;color:var(--text-2);">
-          <p><strong class="accent">Warehouse / logistics ~ $450M</strong> across 18 deals — the most mature category, mostly growth-stage capital.</p>
-          <p><strong class="accent">Ag robotics ~ $280M</strong> + medical robotics ~ $180M — both sectors transitioning from "interesting" to "commercially validated".</p>
-        </div>
+        <p><strong>Warehouse / logistics — ~$450M</strong> across 18 deals. The most mature category, mostly growth-stage capital.</p>
+        <p><strong>Ag robotics — ~$280M</strong> plus medical robotics ~$180M. Both transitioning from "interesting" to "commercially validated".</p>
       </div>
     </div>
   </section>
 
-  <section class="callout" style="margin-bottom: 28px;">
-    <strong>Why this matters for Auki.</strong>
-    Every category above — humanoids, warehouse fleets, AR + robotics co-deployments, embodied AI — is
-    <strong>multi-vendor and multi-device by default</strong>. Each stack carries its own map truth, its own
-    permissions, its own update cadence. As autonomy frequency rises, coordination errors get expensive fast.
-    <span class="accent">Auki / Posemesh is the shared spatial coordination layer</span> — canonical spatial graph,
-    tenancy &amp; permissions, live updates — that lets these funded fleets actually compose at a site.
+  <section class="callout" style="margin-bottom: 36px;">
+    <span class="label">Why this matters for Auki</span>
+    Every category above — humanoids, warehouse fleets, AR + robotics co-deployments, embodied AI —
+    is <strong>multi-vendor and multi-device by default</strong>. Each stack carries its own map truth,
+    its own permissions, its own update cadence. As autonomy frequency rises, coordination errors get
+    expensive fast. <strong>Auki / Posemesh is the shared spatial coordination layer</strong> —
+    canonical spatial graph, tenancy &amp; permissions, live updates — that lets these funded fleets
+    actually compose at a site.
   </section>
 
-  <section class="stack" style="margin-bottom: 24px;">
-    <h2>Notable mega-rounds — robotics, Q1 2026</h2>
-    <div class="card" style="padding: 6px 6px 8px;">
+  <section style="margin-bottom: 28px;">
+    <h3 style="margin-bottom: 18px;">Notable mega-rounds — robotics, Q1 2026</h3>
+    <div class="card" style="padding: 6px 10px 8px;">
       <table>
         <thead>
           <tr><th>Company</th><th>Round</th><th>Focus</th></tr>
         </thead>
         <tbody>
-          <tr><td>Apptronik</td><td class="num">$350M Series C</td><td>Humanoid scale-up (Apollo)</td></tr>
-          <tr><td>Physical Intelligence</td><td class="num">$280M Series B</td><td>Manipulation foundation models</td></tr>
-          <tr><td>Skild AI</td><td class="num">$250M Series B</td><td>Cross-form-factor robot models</td></tr>
-          <tr><td>Covariant</td><td class="num">$200M Series D</td><td>AI warehouse picking at scale</td></tr>
-          <tr><td>Nuro</td><td class="num">$180M extension</td><td>Autonomous delivery</td></tr>
-          <tr><td>Zipline</td><td class="num">$150M growth</td><td>Drone logistics network</td></tr>
-          <tr><td>Carbon Robotics</td><td class="num">$120M Series D</td><td>Ag laser weeding</td></tr>
-          <tr><td>Sarcos</td><td class="num">$100M private placement</td><td>Industrial exoskeleton</td></tr>
+          <tr><td class="co">Apptronik</td><td class="num">$350M Series C</td><td>Humanoid scale-up (Apollo)</td></tr>
+          <tr><td class="co">Physical Intelligence</td><td class="num">$280M Series B</td><td>Manipulation foundation models</td></tr>
+          <tr><td class="co">Skild AI</td><td class="num">$250M Series B</td><td>Cross-form-factor robot models</td></tr>
+          <tr><td class="co">Covariant</td><td class="num">$200M Series D</td><td>AI warehouse picking at scale</td></tr>
+          <tr><td class="co">Nuro</td><td class="num">$180M extension</td><td>Autonomous delivery</td></tr>
+          <tr><td class="co">Zipline</td><td class="num">$150M growth</td><td>Drone logistics network</td></tr>
+          <tr><td class="co">Carbon Robotics</td><td class="num">$120M Series D</td><td>Ag laser weeding</td></tr>
+          <tr><td class="co">Sarcos</td><td class="num">$100M private placement</td><td>Industrial exoskeleton</td></tr>
         </tbody>
       </table>
     </div>
@@ -308,28 +417,35 @@
       <h2>Strategics are leaning in</h2>
       <p>
         Corporate venture capital participated in <strong>~40%+</strong> of Q1 deal dollar volume —
-        NVIDIA, Google Ventures, Amazon, Microsoft, plus OEM strategics
-        (Mercedes-Benz, BMW, Foxconn). Signal: appetite for <strong>production paths</strong>, not lab demos alone.
+        NVIDIA, Google Ventures, Amazon, Microsoft, plus OEM strategics (Mercedes-Benz, BMW, Foxconn).
+        Signal: appetite for <strong>production paths</strong>, not lab demos alone.
       </p>
     </div>
     <div class="card">
       <h3>Pipeline</h3>
       <h2>Seed bench is healthy</h2>
       <p>
-        <strong>34 seed deals</strong> in Q1 with average size up to <strong>~$3.8M</strong> (vs ~$2.9M YoY).
-        Robotics remains capital-intensive vs pure software — a structural reason coordination
-        infrastructure (shared maps, shared tenancy) will be bought, not rebuilt.
+        <strong>34 seed deals</strong> in Q1 with average size up to <strong>~$3.8M</strong>
+        (vs ~$2.9M YoY). Robotics remains capital-intensive vs pure software — a structural reason
+        coordination infrastructure (shared maps, shared tenancy) will be bought, not rebuilt.
       </p>
     </div>
   </section>
 
   <footer class="footer">
-    <p style="margin-bottom: 6px;">
-      Source: Robotomated, <a href="https://robotomated.com/learn/market/robotics-funding-q1-2026" rel="noopener">"Robotics Funding Q1 2026"</a> (updated Mar 27, 2026).
-      Other aggregators publish materially different totals — reconcile against your preferred analyst (CB Insights / PitchBook) before quoting in legal materials or the data room.
+    <div class="pagination">
+      <span>01 / 01</span>
+      <span>Auki Labs</span>
+      <span>2026</span>
+    </div>
+    <p>
+      Source: Robotomated, <a class="inline" href="https://robotomated.com/learn/market/robotics-funding-q1-2026" rel="noopener">"Robotics Funding Q1 2026"</a> (updated Mar 27, 2026).
+      Other aggregators publish materially different totals — reconcile against your preferred analyst
+      (CB Insights / PitchBook) before quoting in legal materials or the data room.
     </p>
-    <p style="color:var(--text-3);">
-      Prepared as fundraise context for Auki — spatial infrastructure for robotics &amp; AR fleets. Confidential framing; figures are public.
+    <p style="margin-top: 8px;">
+      Prepared as fundraise context for Auki — spatial infrastructure for robotics &amp; AR fleets.
+      Confidential framing; figures are public.
     </p>
   </footer>
 
